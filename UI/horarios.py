@@ -4,11 +4,10 @@ SIIAU 2.0 - Sistema Integral de Información Académica Universitaria
 """
 
 import tkinter as tk
-from tkinter import ttk, messagebox, simpledialog
+from tkinter import ttk, messagebox
 from typing import Optional, Dict, Any
 from DB.dbHorarios import DBHorario
 from conexion import ConexionDB
-import re
 from datetime import datetime, time, timedelta
 
 class HorariosUI:

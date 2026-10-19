@@ -2,9 +2,8 @@
 Módulo de Gestión de Alumno "Inscripciones" - Base de Datos
 SIIAU 2.0 - Sistema Integral de Información Académica Universitaria
 """
-import tkinter as tk
 from tkinter import ttk, messagebox
-from typing import Optional, Dict, Any
+from typing import Dict, Any
 from DB.dbAlumnoVista import DBAlumnoVista
 from conexion import ConexionDB
 

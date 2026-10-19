@@ -4,10 +4,10 @@ SIIAU 2.0 - Sistema Integral de Información Académica Universitaria
 """
 import tkinter as tk
 from tkinter import ttk, messagebox
-from typing import Optional, Dict, Any, List
+from typing import Dict, Any
 from DB.dbAlumnoVista import DBAlumnoVista
 from conexion import ConexionDB
-from datetime import time, timedelta, datetime
+from datetime import time, timedelta
 
 class AlumnoHorarioUI:
     def __init__(self, parent: ttk.Frame, usuario_actual: Dict[str, Any], conexion: ConexionDB):

@@ -22,21 +22,13 @@ from conexion import ConexionDB
 from UI.usuarios import UsuariosUI
 from DB.dbUsuarios import DBUsuario
 from UI.maestros import MaestrosUI
-from DB.dbMaestros import DBMaestro
 from UI.grupos import GruposUI
-from DB.dbGrupos import DBGrupo
 from UI.materias import MateriasUI
-from DB.dbMaterias import DBMateria
 from UI.horarios import HorariosUI
-from DB.dbHorarios import DBHorario
 from UI.alumnos import AlumnosUI
-from DB.dbAlumnos import DBAlumno
 from UI.carreras import CarrerasUI
-from DB.dbCarreras import DBCarrera
 from UI.salones import SalonesUI
-from DB.dbSalones import DBSalon
 from UI.planeacion import PlaneacionUI
-from DB.dbPlaneacion import DBPlaneacion
 from DB.dbAlumnoVista import DBAlumnoVista
 from UI.alumno_perfil import AlumnoPerfilUI
 from UI.alumno_inscripcion import AlumnoInscripcionUI
@@ -230,8 +222,6 @@ class App:
                 self.usuario_actual = None
                 return
             
-            print(f"DEBUG: Usuario autenticado - ID: {self.usuario_actual.get('id')}, Rol: {self.usuario_actual.get('rol')}")
-            
             # Solo para alumnos, cargar perfil adicional
             if self.usuario_actual.get('rol') == "ALUMNO":
                 try:
@@ -245,13 +235,10 @@ class App:
                     
                     if perfil_completo:
                         self.usuario_actual.update(perfil_completo)
-                        print("DEBUG: Perfil alumno cargado exitosamente")
-                    else:
-                        print("DEBUG: No se encontró perfil adicional del alumno, usando datos básicos")
-                        # No es fatal, continuar con datos básicos
+                    # Si no hay perfil adicional no es fatal: se usan los datos del login.
                         
                 except Exception as e:
-                    print(f"DEBUG: Error cargando perfil alumno: {e}")
+                    print(f"Error al cargar el perfil del alumno: {e}")
                     # No es fatal, continuar con datos básicos del login
             
             # CONSTRUIR MENÚ (esto debe ejecutarse SIEMPRE)
@@ -279,7 +266,7 @@ class App:
         self.root.geometry("1000x600")
         self.root.resizable(True, True)
         
-                # Menú superior
+        # Menú superior
         menubar = tk.Menu(self.root)
         self.root.config(menu=menubar)
         

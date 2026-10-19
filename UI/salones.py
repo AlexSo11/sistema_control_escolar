@@ -3,7 +3,7 @@ Módulo de Gestión de Salones - Base de Datos
 SIIAU 2.0 - Sistema Integral de Información Académica Universitaria
 """
 import tkinter as tk
-from tkinter import ttk, messagebox, simpledialog
+from tkinter import ttk, messagebox
 from typing import Optional, Dict, Any
 from DB.dbSalones import DBSalon 
 from conexion import ConexionDB

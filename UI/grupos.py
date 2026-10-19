@@ -7,7 +7,6 @@ from tkinter import ttk, messagebox
 from typing import Optional, Dict, Any
 from DB.dbGrupos import DBGrupo
 from conexion import ConexionDB
-import re
 
 class GruposUI:
     def __init__(self, parent: ttk.Frame, usuario_actual: Optional[Dict[str, Any]] = None):

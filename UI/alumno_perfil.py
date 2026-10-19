@@ -3,8 +3,8 @@ Módulo de Gestión de Alumno "Mi Perfil" - Base de Datos
 SIIAU 2.0 - Sistema Integral de Información Académica Universitaria
 """
 import tkinter as tk
-from tkinter import ttk, messagebox
-from typing import Optional, Dict, Any
+from tkinter import ttk
+from typing import Dict, Any
 from conexion import ConexionDB
 from datetime import datetime, date
 
